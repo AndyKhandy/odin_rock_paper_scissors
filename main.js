@@ -1,11 +1,12 @@
-let computer = "";
-let player = "";
 
 playGame();
 
 function playGame(){
     let humanScore = 0;
     let computerScore = 0;
+
+    let computer = "";
+    let player = "";
 
     for(let i = 1; i <= 5; i++)
     {
@@ -36,7 +37,7 @@ function playGame(){
 
     let winner =  humanScore >= computerScore ? "Player" : "Computer";
     console.log("The winner is " + winner);
-    alert("The winner is " + winner + " Player got " + humanScore + " points || Computer got " + computerScore + " points");
+    alert("The winner is " + winner + "|| Player got " + humanScore + " points || Computer got " + computerScore + " points");
 }
 
 
