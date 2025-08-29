@@ -1,12 +1,29 @@
-let computer = getComputerChoice();
-let player = getHumanChoice();
-player = player.toLowerCase();
+const computer = getComputerChoice();
+const player = getHumanChoice();
 
 let humanScore = 0;
 let computerScore = 0;
 
 console.log("Hello World! Computer chose " + computer);
 console.log("The player chose " + player);
+playRound(player,computer);
+
+function playRound(humanChoice, computerChoice)
+{
+    humanChoice = humanChoice.toLowerCase();
+    if(humanChoice === computerChoice)
+    {
+        console.log("It was a tie no one won!");
+    }
+    else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" &&  computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
+        humanScore++;
+        console.log("Player won!");
+    }
+    else{
+        computerScore++;
+        console.log("Computer won!");
+    }
+}
 
 
 function getComputerChoice()
