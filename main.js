@@ -1,5 +1,12 @@
 let computer = getComputerChoice();
-console.log("Hello World! Computer chose" + computer);
+let player = getHumanChoice();
+player = player.toLowerCase();
+
+let humanScore = 0;
+let computerScore = 0;
+
+console.log("Hello World! Computer chose " + computer);
+console.log("The player chose " + player);
 
 
 function getComputerChoice()
@@ -20,4 +27,11 @@ function getComputerChoice()
     }
 
     return choice
+}
+
+
+function getHumanChoice()
+{
+    let choice = prompt("Enter rock, paper, or scissors!");
+    return choice;
 }
