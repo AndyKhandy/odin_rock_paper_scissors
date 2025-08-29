@@ -1,14 +1,20 @@
-const computer = getComputerChoice();
-const player = getHumanChoice();
+let computer = "";
+let player = "";
 
-let humanScore = 0;
-let computerScore = 0;
+playGame();
 
-console.log("Hello World! Computer chose " + computer);
-console.log("The player chose " + player);
-playRound(player,computer);
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
 
-function playRound(humanChoice, computerChoice)
+    for(let i = 0; i < 5; i++)
+    {
+        computer = getComputerChoice();
+        player = getHumanChoice();
+        playRound(player, computer);
+    }
+
+    function playRound(humanChoice, computerChoice)
 {
     humanChoice = humanChoice.toLowerCase();
     if(humanChoice === computerChoice)
@@ -17,13 +23,18 @@ function playRound(humanChoice, computerChoice)
     }
     else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" &&  computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
         humanScore++;
-        console.log("Player won!");
+        console.log("Player won! " + humanChoice + " beats " + computerChoice);
     }
     else{
         computerScore++;
-        console.log("Computer won!");
+        console.log("Computer won! " + computerChoice + " beats " + humanChoice);
     }
 }
+
+    let winner =  humanScore >= computerScore ? "Player" : "Computer";
+    console.log("The winner is " + winner);
+}
+
 
 
 function getComputerChoice()
