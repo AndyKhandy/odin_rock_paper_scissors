@@ -22,7 +22,7 @@ function playGame(){
         playRound(getComputerChoice(), "scissors")
     );
 
-    const div = document.querySelector(".display");
+    const divText = document.querySelector(".displayText");
     const para = document.createElement("p");
 
     function playRound(computerChoice, humanChoice)
