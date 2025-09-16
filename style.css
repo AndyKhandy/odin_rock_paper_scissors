@@ -2,14 +2,55 @@
     margin:0px;
     padding:0px;
     box-sizing: border-box;
+    font-size: 20px;
 }
 
 .main {
     max-width: 800px;
     min-height: 650px;
-    background-color: rgb(222, 235, 101);
     margin: 100px auto;
     border: 2px solid black;
     border-radius: 10px;
     padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#title {
+    font-size: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(130, 130, 18);
+}
+
+.display, .playerScore, .computerScore {
+    font-size: 100px;
+    font-weight: bolder;
+}
+
+#text {
+    font-weight: bolder;
+}
+.playerSelect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px
+}
+
+button {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 200ms ease;
+    font-weight: bold;
+}
+
+.playerSelect button:hover{
+    transform: scale(1.1);
+}
+
+#reset:hover{
+    background-color: rgb(183, 181, 181);
 }

@@ -1,14 +1,21 @@
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorBtn = document.querySelector("#scissor");
+const para = document.querySelector("#text");
+const playerWins = document.querySelector(".playerScore");
+const computerWins = document.querySelector(".computerScore");
+const resetBtn = document.querySelector("#reset");
+
+let humanScore = 0;
+let computerScore = 0;
 
 playGame();
 
+resetBtn.addEventListener("click", reset);
+
+
 
 function playGame(){
-    let humanScore = 0;
-    let computerScore = 0;
-
 
     rockBtn.addEventListener("click", () => 
         playRound(getComputerChoice(), "rock")
@@ -23,7 +30,6 @@ function playGame(){
     );
 
     const divText = document.querySelector(".displayText");
-    const para = document.createElement("p");
 
     function playRound(computerChoice, humanChoice)
 {
@@ -41,16 +47,30 @@ function playGame(){
         para.textContent = "Computer won! " + computerChoice + " beats " + humanChoice;
     }
 
-    if(humanScore == 5 || computerScore == 5)
+    if((humanScore == 5 || computerScore == 5) && (humanScore + computerScore < 10))
     {
         let winner =  humanScore >= computerScore ? "Player" : "Computer";
-        para.textContent += "The winner is " + winner + "|| Player got " + humanScore + " points || Computer got " + computerScore + " points";
+        para.textContent = "The winner is " + winner + " || Player got " + humanScore + " points || Computer got " + computerScore + " points";
     }
-
-    div.appendChild(para);
+    
+    displayScore();
+}
 }
 
-    
+
+
+function displayScore()
+{
+    playerWins.textContent = humanScore;
+    computerWins.textContent = computerScore;
+}
+
+function reset()
+{
+    humanScore = 0;
+    computerScore = 0;
+    displayScore();
+    para.textContent = "Please Press One of the Three";
 }
 
 
