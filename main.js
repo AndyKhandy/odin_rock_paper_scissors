@@ -1,10 +1,16 @@
-const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorBtn = document.querySelector("#scissor");
-const para = document.querySelector("#text");
-const playerWins = document.querySelector(".playerScore");
-const computerWins = document.querySelector(".computerScore");
-const resetBtn = document.querySelector("#reset");
+function select(id)
+{
+    return document.querySelector(id);
+}
+
+
+const rockBtn = select("#rock");
+const paperBtn = select("#paper");
+const scissorBtn = select("#scissor");
+const para = select("#text");
+const playerWins = select(".playerScore");
+const computerWins = select(".computerScore");
+const resetBtn = select("#reset");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -22,7 +28,7 @@ function playGame(){
     );
 
     paperBtn.addEventListener("click", () => 
-        playRound(getComputerChoice(), "paper")
+         playRound(getComputerChoice(), "paper")
     );
 
     scissorBtn.addEventListener("click", () => 
